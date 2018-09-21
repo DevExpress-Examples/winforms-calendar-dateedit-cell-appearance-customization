@@ -58,11 +58,15 @@ namespace Calendar_CellStyleProvider {
     }
 
     public class CustomCellStyleProvider : ICalendarCellStyleProvider {
+        static Font font;
         public void UpdateAppearance(CalendarCellStyle cell) {
             string holidayText;
             if(Holidays.IsHoliday(cell.Date, out holidayText)) {
                 cell.Appearance.ForeColor = Color.Yellow;
-                cell.Appearance.Font = new Font(cell.Appearance.Font, FontStyle.Bold);
+                if(font == null) {
+                    font = new Font(cell.Appearance.Font, FontStyle.Bold);
+                }
+                cell.Appearance.Font = font;
                 if (cell.Active)
                     cell.Appearance.BackColor = Color.HotPink;
                 else

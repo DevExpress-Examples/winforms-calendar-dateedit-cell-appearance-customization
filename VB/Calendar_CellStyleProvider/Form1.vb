@@ -73,12 +73,15 @@ Namespace Calendar_CellStyleProvider
     Public Class CustomCellStyleProvider
         Implements ICalendarCellStyleProvider
 
-
+        Shared font As Font
         Public Sub UpdateAppearance(ByVal cell As CalendarCellStyle) Implements ICalendarCellStyleProvider.UpdateAppearance
             Dim holidayText As String = Nothing
             If Holidays.IsHoliday(cell.Date, holidayText) Then
                 cell.Appearance.ForeColor = Color.Yellow
-                cell.Appearance.Font = New Font(cell.Appearance.Font, FontStyle.Bold)
+                If font Is Nothing Then
+                    font = New Font(cell.Appearance.Font, FontStyle.Bold)
+                End If
+                cell.Appearance.Font = font
                 If cell.Active Then
                     cell.Appearance.BackColor = Color.HotPink
                 Else
