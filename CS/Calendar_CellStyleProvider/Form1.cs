@@ -64,7 +64,7 @@ namespace Calendar_CellStyleProvider {
             if(Holidays.IsHoliday(cell.Date, out holidayText)) {
                 cell.Appearance.ForeColor = Color.Yellow;
                 if(font == null) {
-                    font = new Font(cell.Appearance.Font, FontStyle.Bold);
+                    font = new Font(cell.Appearance.Font, System.Drawing.FontStyle.Bold);
                 }
                 cell.Appearance.Font = font;
                 if (cell.Active)
