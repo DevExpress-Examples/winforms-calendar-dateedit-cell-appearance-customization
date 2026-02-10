@@ -9,7 +9,7 @@
 
 This example creates a `CellStyleProvider` object and uses it to customize the appearance of specific calendar cells in `CalendarControl` and `DateEdit` controls.
 
-![](https://raw.githubusercontent.com/DevExpress-Examples/how-to-customize-cell-appearance-in-calendarcontrol-and-dateedit-cellstyleprovider-t352638/15.2.7%2B/media/winforms-calendar-appearance-customization.png)
+![](media/winforms-calendar-appearance-customization.png)
 
 
 ## Files to Review
@@ -22,3 +22,4 @@ This example creates a `CellStyleProvider` object and uses it to customize the 
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
